@@ -19,5 +19,5 @@ RUN apt-get -y update -qq --fix-missing && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT service cups start && bash
+ENTRYPOINT ["/bin/sh", "-c" , "service cups start && bash"]
 WORKDIR /workspace
